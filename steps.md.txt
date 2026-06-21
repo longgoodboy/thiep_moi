@@ -1,0 +1,901 @@
+# Step Breakdown — Graduation Invitation Microsite
+
+## Tổng quan cách chia dự án
+
+Dự án được chia thành 8 phần nhỏ:
+
+1. Chuẩn bị nội dung
+2. Chuẩn bị hình ảnh
+3. Thiết kế UI foundation
+4. Xây dựng layout chính
+5. Xây dựng từng component
+6. Thêm interaction và transition
+7. Tích hợp form, map, calendar, share
+8. QA, tối ưu và deploy
+
+Mục tiêu là làm theo thứ tự từ **nội dung → giao diện → chức năng → motion → hoàn thiện** để tránh sửa đi sửa lại quá nhiều.
+
+---
+
+# PHẦN 1 — Chốt nội dung
+
+## Step 1.1 — Tạo file nội dung sự kiện
+
+**Mục tiêu:** Có một nguồn dữ liệu duy nhất cho toàn bộ website.
+
+**Cần làm:**
+
+* [ ] Điền tên sự kiện: `Lễ Tốt Nghiệp`
+* [ ] Điền tên: `Kiều Đức Long`
+* [ ] Điền ngày tổ chức
+* [ ] Điền giờ bắt đầu
+* [ ] Điền giờ kết thúc nếu có
+* [ ] Điền tên địa điểm
+* [ ] Điền địa chỉ đầy đủ
+* [ ] Thêm link Google Maps
+* [ ] Viết lời mời chính
+* [ ] Viết quote chính
+* [ ] Viết lời cảm ơn cuối trang
+
+**Output:**
+
+```ts
+eventData.ts
+```
+
+---
+
+## Step 1.2 — Chốt khung chương trình
+
+**Mục tiêu:** Có timeline rõ ràng để đưa vào section “Khung chương trình”.
+
+**Cần làm:**
+
+* [ ] Xác định giờ đón khách
+* [ ] Xác định giờ khai mạc
+* [ ] Xác định giờ nghi thức chính
+* [ ] Xác định giờ chụp ảnh
+* [ ] Xác định giờ tiệc nhẹ/giao lưu
+* [ ] Rút gọn tên hoạt động để dễ đọc trên mobile
+
+**Output mẫu:**
+
+```ts
+program: [
+  { time: "18:00", title: "Đón khách" },
+  { time: "18:30", title: "Khai mạc" },
+  { time: "19:00", title: "Nghi thức tốt nghiệp" },
+  { time: "19:45", title: "Chụp ảnh lưu niệm" },
+  { time: "20:30", title: "Tiệc nhẹ / giao lưu" }
+]
+```
+
+---
+
+## Step 1.3 — Chốt RSVP cần thu gì
+
+**Mục tiêu:** Form RSVP ngắn, dễ điền.
+
+**Cần làm:**
+
+* [ ] Trường tên khách mời
+* [ ] Trường trạng thái tham dự
+* [ ] Trường số người đi cùng
+* [ ] Trường lời nhắn tùy chọn
+* [ ] Thông báo sau khi gửi thành công
+* [ ] Thông báo khi lỗi
+
+**Output:**
+
+Danh sách field cho form RSVP.
+
+---
+
+# PHẦN 2 — Chuẩn bị hình ảnh
+
+## Step 2.1 — Chọn vai trò cho từng ảnh
+
+**Mục tiêu:** Dùng ảnh đúng vị trí, tránh rối visual.
+
+**Phân bổ đề xuất:**
+
+* `thiệp tốt nghiệp3.png`: hero chính
+* `thiệp tốt nghiệp(1).png`: hero desktop hoặc section editorial
+* `thiệp tốt nghiệp2(1).png`: background closing hoặc cinematic section
+
+**Cần làm:**
+
+* [ ] Chọn ảnh hero mobile
+* [ ] Chọn ảnh hero desktop
+* [ ] Chọn ảnh background phụ
+* [ ] Chọn ảnh social preview
+
+---
+
+## Step 2.2 — Tối ưu ảnh
+
+**Mục tiêu:** Website tải nhanh, không bị nặng.
+
+**Cần làm:**
+
+* [ ] Crop ảnh hero cho mobile
+* [ ] Crop ảnh hero cho desktop
+* [ ] Convert ảnh sang `.webp`
+* [ ] Tạo bản ảnh nhẹ cho background phụ
+* [ ] Đặt tên file rõ ràng
+
+**Output đề xuất:**
+
+```text
+public/images/hero-mobile.webp
+public/images/hero-desktop.webp
+public/images/editorial.webp
+public/images/cinematic-bg.webp
+public/images/og-image.webp
+```
+
+---
+
+# PHẦN 3 — UI Foundation
+
+## Step 3.1 — Tạo design tokens
+
+**Mục tiêu:** Màu, font, spacing, radius thống nhất.
+
+**Cần làm:**
+
+* [ ] Khai báo màu nền chính
+* [ ] Khai báo màu champagne gold
+* [ ] Khai báo màu chữ
+* [ ] Khai báo font heading
+* [ ] Khai báo font body
+* [ ] Khai báo font signature
+* [ ] Khai báo border radius
+* [ ] Khai báo shadow
+* [ ] Khai báo easing cho transition
+
+**Output:**
+
+```css
+:root {
+  --color-bg: #050D1A;
+  --color-bg-soft: #0F1623;
+  --color-gold: #C8A874;
+  --color-text: #F4EEE8;
+  --color-muted: #70787F;
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+```
+
+---
+
+## Step 3.2 — Tạo layout system
+
+**Mục tiêu:** Các section có spacing và max-width nhất quán.
+
+**Cần làm:**
+
+* [ ] Tạo `.page`
+* [ ] Tạo `.section`
+* [ ] Tạo `.container`
+* [ ] Tạo spacing mobile
+* [ ] Tạo spacing desktop
+* [ ] Đảm bảo không bị horizontal scroll
+
+---
+
+## Step 3.3 — Tạo component nền
+
+**Mục tiêu:** Có các component nhỏ tái sử dụng.
+
+**Cần làm:**
+
+* [ ] Button primary
+* [ ] Button secondary
+* [ ] Info card
+* [ ] Section heading
+* [ ] Icon wrapper
+* [ ] Divider line champagne
+* [ ] Glass panel
+
+---
+
+# PHẦN 4 — Xây dựng layout chính
+
+## Step 4.1 — Setup project
+
+**Mục tiêu:** Tạo nền tảng code.
+
+**Cần làm:**
+
+* [ ] Tạo project Next.js hoặc HTML/CSS/JS
+* [ ] Setup Tailwind nếu dùng
+* [ ] Setup folder images
+* [ ] Setup folder components
+* [ ] Setup data file
+* [ ] Import fonts
+* [ ] Tạo trang chính
+
+**Output:**
+
+Website chạy local.
+
+---
+
+## Step 4.2 — Tạo Hero section
+
+**Mục tiêu:** Người dùng mở link là thấy ấn tượng ngay.
+
+**Cần làm:**
+
+* [ ] Thêm ảnh nền hero
+* [ ] Thêm overlay tối
+* [ ] Thêm dòng `GRADUATION EDITION`
+* [ ] Thêm title `LÊ TỐT NGHIỆP`
+* [ ] Thêm tên `Kiều Đức Long`
+* [ ] Thêm quote
+* [ ] Thêm nút `Mở thiệp mời`
+* [ ] Thêm nút phụ `Xem thông tin`
+
+**Acceptance criteria:**
+
+* Hero full-screen trên mobile
+* Chữ dễ đọc
+* CTA dễ bấm
+* Không bị che mặt nhân vật chính
+
+---
+
+## Step 4.3 — Tạo section Lời mời
+
+**Mục tiêu:** Trang có phần mời chính thức.
+
+**Cần làm:**
+
+* [ ] Tạo card lời mời
+* [ ] Thêm nội dung lời mời
+* [ ] Thêm divider vàng
+* [ ] Thêm CTA xuống thông tin
+
+**Acceptance criteria:**
+
+* Lời mời ngắn, trang trọng
+* Đọc tốt trên mobile
+* Không quá nhiều chữ
+
+---
+
+## Step 4.4 — Tạo Quick Info section
+
+**Mục tiêu:** Người dùng thấy nhanh ngày giờ, địa điểm, dress code.
+
+**Cần làm:**
+
+* [ ] Tạo card thời gian
+* [ ] Tạo card địa điểm
+* [ ] Tạo card dress code
+* [ ] Thêm icon cho từng card
+* [ ] Thêm CTA trong card nếu cần
+
+**Acceptance criteria:**
+
+* Thông tin chính nhìn thấy trong dưới 10 giây
+* Card dễ bấm
+* Layout mobile một cột
+* Layout desktop ba cột
+
+---
+
+## Step 4.5 — Tạo Program Timeline section
+
+**Mục tiêu:** Hiển thị khung chương trình rõ ràng.
+
+**Cần làm:**
+
+* [ ] Tạo tiêu đề section
+* [ ] Tạo nút mở/đóng timeline
+* [ ] Tạo danh sách mốc giờ
+* [ ] Tạo đường timeline
+* [ ] Tạo trạng thái đang mở
+
+**Acceptance criteria:**
+
+* Timeline dễ đọc
+* Có thể mở/đóng
+* Không tràn màn hình mobile
+
+---
+
+## Step 4.6 — Tạo Location section
+
+**Mục tiêu:** Người dùng mở được bản đồ nhanh.
+
+**Cần làm:**
+
+* [ ] Hiển thị tên địa điểm
+* [ ] Hiển thị địa chỉ
+* [ ] Thêm nút Google Maps
+* [ ] Thêm nút copy địa chỉ
+* [ ] Thêm ghi chú gửi xe nếu có
+
+**Acceptance criteria:**
+
+* Bấm mở đúng Google Maps
+* Copy địa chỉ có feedback
+* Mobile dễ thao tác
+
+---
+
+## Step 4.7 — Tạo RSVP section
+
+**Mục tiêu:** Người dùng xác nhận tham dự đơn giản.
+
+**Cần làm:**
+
+* [ ] Tạo input tên
+* [ ] Tạo select/radio trạng thái tham dự
+* [ ] Tạo input số người đi cùng
+* [ ] Tạo textarea lời nhắn
+* [ ] Tạo nút gửi
+* [ ] Tạo success state
+* [ ] Tạo error state
+
+**Acceptance criteria:**
+
+* Form ngắn
+* Có validate
+* Có loading
+* Có thông báo thành công
+* Không mất dữ liệu khi lỗi
+
+---
+
+## Step 4.8 — Tạo Closing section
+
+**Mục tiêu:** Kết trang bằng cảm xúc sang trọng.
+
+**Cần làm:**
+
+* [ ] Thêm background ảnh phụ hoặc gradient
+* [ ] Thêm câu `The future is yours. Make it count.`
+* [ ] Thêm lời cảm ơn
+* [ ] Thêm nút chia sẻ hoặc quay lại đầu trang
+
+---
+
+# PHẦN 5 — Interaction
+
+## Step 5.1 — Tạo trạng thái “mở thiệp”
+
+**Mục tiêu:** Khi bấm nút, nội dung được reveal.
+
+**Cần làm:**
+
+* [ ] Tạo state `isOpened`
+* [ ] Khi bấm `Mở thiệp mời`, set `isOpened = true`
+* [ ] Scroll xuống section lời mời
+* [ ] Reveal các section sau hero
+* [ ] Đổi CTA nếu cần
+
+**Acceptance criteria:**
+
+* Không reload trang
+* Không giật layout
+* Nội dung xuất hiện mượt
+
+---
+
+## Step 5.2 — Smooth scroll
+
+**Mục tiêu:** Điều hướng giữa các section mượt.
+
+**Cần làm:**
+
+* [ ] Bấm `Xem thông tin` scroll tới quick info
+* [ ] Bấm `Xem khung chương trình` scroll tới timeline
+* [ ] Bấm `RSVP` scroll tới form
+* [ ] Bấm `Lên đầu trang` scroll về hero
+
+---
+
+## Step 5.3 — Timeline accordion
+
+**Mục tiêu:** Timeline tương tác gọn gàng.
+
+**Cần làm:**
+
+* [ ] Timeline mặc định đóng hoặc mở tùy thiết kế
+* [ ] Bấm để mở
+* [ ] Bấm lại để đóng
+* [ ] Icon xoay nhẹ khi mở
+* [ ] Animate chiều cao hoặc dùng motion layout
+
+**Acceptance criteria:**
+
+* Mở/đóng mượt
+* Không bị jump
+* Trên mobile vẫn dễ đọc
+
+---
+
+## Step 5.4 — Location bottom sheet trên mobile
+
+**Mục tiêu:** Xem địa điểm đẹp và tiện trên điện thoại.
+
+**Cần làm:**
+
+* [ ] Tạo bottom sheet
+* [ ] Tạo overlay nền
+* [ ] Tạo nút đóng
+* [ ] Thêm địa chỉ
+* [ ] Thêm nút Maps
+* [ ] Thêm nút copy
+
+**Acceptance criteria:**
+
+* Sheet trượt từ dưới lên
+* Có thể đóng bằng nút hoặc overlay
+* Không che mất thao tác chính
+
+---
+
+## Step 5.5 — Share interaction
+
+**Mục tiêu:** Người dùng chia sẻ link dễ dàng.
+
+**Cần làm:**
+
+* [ ] Dùng native share API nếu có
+* [ ] Fallback copy link nếu không hỗ trợ
+* [ ] Hiện feedback `Đã sao chép link`
+
+---
+
+# PHẦN 6 — Motion / Transition
+
+## Step 6.1 — Hero opening animation
+
+**Mục tiêu:** Mở trang có cảm giác cinematic.
+
+**Cần làm:**
+
+* [ ] Background fade-in
+* [ ] Background zoom nhẹ
+* [ ] Edition text fade-down
+* [ ] Title fade-up
+* [ ] Signature name hiện sau title
+* [ ] CTA xuất hiện cuối cùng
+
+**Timing đề xuất:**
+
+* Tổng thời gian: 800–1100ms
+* Stagger: 100–160ms
+
+---
+
+## Step 6.2 — Section reveal animation
+
+**Mục tiêu:** Các section xuất hiện mềm khi scroll.
+
+**Cần làm:**
+
+* [ ] Tạo class `.reveal`
+* [ ] Dùng Intersection Observer hoặc Framer Motion
+* [ ] Animate opacity
+* [ ] Animate translateY
+* [ ] Stagger các card
+
+**Acceptance criteria:**
+
+* Reveal mượt
+* Không giật
+* Không delay quá lâu
+
+---
+
+## Step 6.3 — Card interaction animation
+
+**Mục tiêu:** Card có feedback khi hover/tap.
+
+**Cần làm:**
+
+* [ ] Hover nâng card 4–6px
+* [ ] Active scale nhẹ
+* [ ] Viền vàng sáng nhẹ
+* [ ] Shadow mềm hơn
+* [ ] Icon dịch nhẹ
+
+---
+
+## Step 6.4 — RSVP success animation
+
+**Mục tiêu:** Sau khi RSVP, người dùng có cảm giác được ghi nhận.
+
+**Cần làm:**
+
+* [ ] Button chuyển loading
+* [ ] Form fade-out nhẹ
+* [ ] Message cảm ơn fade-in
+* [ ] Thêm line ánh vàng chạy nhẹ
+* [ ] Không dùng pháo hoa quá lố
+
+---
+
+## Step 6.5 — Reduced motion
+
+**Mục tiêu:** Hỗ trợ người dùng không muốn animation mạnh.
+
+**Cần làm:**
+
+* [ ] Thêm `prefers-reduced-motion`
+* [ ] Tắt parallax
+* [ ] Rút ngắn animation
+* [ ] Giữ feedback cơ bản
+
+---
+
+# PHẦN 7 — Integration
+
+## Step 7.1 — Tích hợp RSVP backend
+
+**Mục tiêu:** Lưu phản hồi khách mời.
+
+**Option đơn giản:**
+
+* Tally
+* Google Form
+* Formspree
+
+**Option nâng cao:**
+
+* Supabase
+
+**Cần làm:**
+
+* [ ] Tạo form backend
+* [ ] Map field từ website sang backend
+* [ ] Test gửi dữ liệu
+* [ ] Kiểm tra dữ liệu lưu đúng
+* [ ] Thêm error handling
+
+---
+
+## Step 7.2 — Tích hợp Google Maps
+
+**Mục tiêu:** Người dùng mở được địa điểm.
+
+**Cần làm:**
+
+* [ ] Tạo Google Maps URL
+* [ ] Gắn vào nút `Mở Google Maps`
+* [ ] Test trên mobile
+* [ ] Test trên desktop
+
+---
+
+## Step 7.3 — Tích hợp Add to Calendar
+
+**Mục tiêu:** Người dùng lưu lịch nhanh.
+
+**Cần làm:**
+
+* [ ] Tạo Google Calendar URL
+* [ ] Hoặc tạo file `.ics`
+* [ ] Điền title, time, location, description
+* [ ] Test trên iPhone
+* [ ] Test trên Android
+* [ ] Test trên desktop
+
+---
+
+## Step 7.4 — Tạo social preview
+
+**Mục tiêu:** Khi gửi link, preview phải đẹp.
+
+**Cần làm:**
+
+* [ ] Thêm title metadata
+* [ ] Thêm description metadata
+* [ ] Thêm OG image
+* [ ] Test preview trên Facebook/Messenger/Zalo nếu có thể
+
+**Metadata mẫu:**
+
+```text
+Title: Lễ Tốt Nghiệp — Kiều Đức Long
+Description: Trân trọng kính mời bạn đến tham dự lễ tốt nghiệp của Kiều Đức Long.
+Image: og-image.webp
+```
+
+---
+
+# PHẦN 8 — QA / Polish / Deploy
+
+## Step 8.1 — Mobile QA
+
+**Cần test:**
+
+* [ ] iPhone Safari
+* [ ] Android Chrome
+* [ ] Hero hiển thị đẹp
+* [ ] Text không quá nhỏ
+* [ ] Nút dễ bấm
+* [ ] Không bị tràn ngang
+* [ ] Animation mượt
+* [ ] RSVP gửi được
+* [ ] Maps mở đúng
+
+---
+
+## Step 8.2 — Desktop QA
+
+**Cần test:**
+
+* [ ] Chrome
+* [ ] Safari nếu có
+* [ ] Edge nếu cần
+* [ ] Layout không bị lệch
+* [ ] Ảnh không bị vỡ
+* [ ] Card hover đẹp
+* [ ] Timeline đọc rõ
+
+---
+
+## Step 8.3 — Performance QA
+
+**Cần test:**
+
+* [ ] Ảnh đã nén
+* [ ] Hero không tải quá chậm
+* [ ] Không dùng video nặng
+* [ ] Không animation `width`, `height`, `top`, `left` không cần thiết
+* [ ] Không lỗi console nghiêm trọng
+
+---
+
+## Step 8.4 — Deploy
+
+**Cần làm:**
+
+* [ ] Deploy lên Vercel hoặc Netlify
+* [ ] Kiểm tra link production
+* [ ] Gắn domain nếu có
+* [ ] Test link trên điện thoại thật
+* [ ] Test gửi link qua Zalo/Messenger/Facebook
+* [ ] Sửa lỗi cuối
+* [ ] Chốt link final
+
+---
+
+# Thứ tự làm khuyến nghị
+
+## Sprint 1 — Nội dung & assets
+
+* [ ] Step 1.1 — Tạo file nội dung sự kiện
+* [ ] Step 1.2 — Chốt khung chương trình
+* [ ] Step 1.3 — Chốt RSVP
+* [ ] Step 2.1 — Chọn vai trò cho ảnh
+* [ ] Step 2.2 — Tối ưu ảnh
+
+**Kết quả:** Có đủ nội dung và hình ảnh để bắt đầu thiết kế/code.
+
+---
+
+## Sprint 2 — UI foundation & layout
+
+* [ ] Step 3.1 — Tạo design tokens
+* [ ] Step 3.2 — Tạo layout system
+* [ ] Step 3.3 — Tạo component nền
+* [ ] Step 4.1 — Setup project
+* [ ] Step 4.2 — Hero section
+* [ ] Step 4.3 — Lời mời
+* [ ] Step 4.4 — Quick info
+
+**Kết quả:** Có trang chính nhìn được, đúng vibe visual.
+
+---
+
+## Sprint 3 — Các section chức năng
+
+* [ ] Step 4.5 — Program timeline
+* [ ] Step 4.6 — Location section
+* [ ] Step 4.7 — RSVP section
+* [ ] Step 4.8 — Closing section
+
+**Kết quả:** Website có đủ nội dung MVP.
+
+---
+
+## Sprint 4 — Interaction & motion
+
+* [ ] Step 5.1 — Trạng thái mở thiệp
+* [ ] Step 5.2 — Smooth scroll
+* [ ] Step 5.3 — Timeline accordion
+* [ ] Step 5.4 — Location bottom sheet
+* [ ] Step 5.5 — Share interaction
+* [ ] Step 6.1 — Hero animation
+* [ ] Step 6.2 — Section reveal
+* [ ] Step 6.3 — Card animation
+* [ ] Step 6.4 — RSVP success animation
+* [ ] Step 6.5 — Reduced motion
+
+**Kết quả:** Website có trải nghiệm mượt, sang, tương tác tốt.
+
+---
+
+## Sprint 5 — Integration
+
+* [ ] Step 7.1 — RSVP backend
+* [ ] Step 7.2 — Google Maps
+* [ ] Step 7.3 — Add to Calendar
+* [ ] Step 7.4 — Social preview
+
+**Kết quả:** Website hoạt động end-to-end.
+
+---
+
+## Sprint 6 — QA & launch
+
+* [ ] Step 8.1 — Mobile QA
+* [ ] Step 8.2 — Desktop QA
+* [ ] Step 8.3 — Performance QA
+* [ ] Step 8.4 — Deploy
+
+**Kết quả:** Website sẵn sàng gửi cho khách mời.
+
+---
+
+# Checklist P0 cần làm trước tiên
+
+Đây là các việc bắt buộc, không nên bỏ qua:
+
+* [ ] Chốt ngày giờ thật
+* [ ] Chốt địa điểm thật
+* [ ] Có link Google Maps
+* [ ] Chọn ảnh hero chính
+* [ ] Tạo hero section
+* [ ] Tạo quick info cards
+* [ ] Tạo timeline
+* [ ] Tạo RSVP form
+* [ ] Tạo transition mở thiệp
+* [ ] Test mobile
+* [ ] Deploy public
+
+---
+
+# Cách chia thành task nhỏ trong GitHub/Notion
+
+## Epic 1 — Content
+
+* Task: Create event data file
+* Task: Finalize invitation copy
+* Task: Finalize program timeline
+* Task: Finalize RSVP fields
+
+## Epic 2 — Assets
+
+* Task: Select hero image
+* Task: Crop mobile image
+* Task: Crop desktop image
+* Task: Convert images to WebP
+* Task: Create OG preview image
+
+## Epic 3 — UI System
+
+* Task: Define color tokens
+* Task: Define typography
+* Task: Create button styles
+* Task: Create card styles
+* Task: Create section layout
+
+## Epic 4 — Page Sections
+
+* Task: Build Hero
+* Task: Build Invitation Intro
+* Task: Build Info Cards
+* Task: Build Program Timeline
+* Task: Build Location
+* Task: Build RSVP
+* Task: Build Closing Footer
+
+## Epic 5 — Motion
+
+* Task: Add hero opening animation
+* Task: Add reveal-on-scroll
+* Task: Add card hover/tap transitions
+* Task: Add timeline stagger animation
+* Task: Add RSVP success animation
+* Task: Add reduced motion support
+
+## Epic 6 — Integrations
+
+* Task: Connect RSVP backend
+* Task: Add Google Maps link
+* Task: Add calendar link
+* Task: Add native share
+* Task: Add metadata and social preview
+
+## Epic 7 — QA & Launch
+
+* Task: Test on mobile
+* Task: Test on desktop
+* Task: Test form submission
+* Task: Test performance
+* Task: Deploy production
+* Task: Final review
+
+---
+
+# Definition of Done cho từng task
+
+Một task được coi là xong khi:
+
+* [ ] Hoạt động đúng theo yêu cầu
+* [ ] Hiển thị tốt trên mobile
+* [ ] Không làm hỏng layout cũ
+* [ ] Có trạng thái hover/tap nếu là component tương tác
+* [ ] Có xử lý lỗi nếu là form/integration
+* [ ] Không có lỗi console nghiêm trọng
+* [ ] Đã được test nhanh trên trình duyệt thật
+
+---
+
+# Thứ tự ưu tiên thực tế
+
+Làm theo thứ tự này để có bản demo nhanh nhất:
+
+```text
+1. Setup project
+2. Tạo eventData
+3. Tối ưu ảnh hero
+4. Code Hero
+5. Code Quick Info
+6. Code Timeline
+7. Code Location
+8. Code RSVP
+9. Thêm animation mở thiệp
+10. Thêm reveal-on-scroll
+11. Tích hợp Maps
+12. Tích hợp RSVP backend
+13. Tích hợp Calendar
+14. Tạo social preview
+15. QA mobile
+16. Deploy
+```
+
+---
+
+# Bản MVP nhỏ nhất có thể demo
+
+MVP demo đầu tiên chỉ cần:
+
+* Hero đẹp
+* Nút mở thiệp
+* Ngày giờ
+* Địa điểm
+* Khung chương trình
+* RSVP giả hoặc chưa kết nối backend
+* Transition cơ bản
+
+Sau khi demo ổn mới thêm:
+
+* RSVP backend
+* Add to Calendar
+* Share link
+* Social preview
+* Bottom sheet
+* Polish animation
+
+---
+
+# Kết luận
+
+Dự án nên được chia nhỏ theo hướng:
+
+```text
+Content → Assets → UI System → Sections → Motion → Integration → QA → Deploy
+```
+
+Không nên bắt đầu bằng animation ngay. Cần dựng được layout và nội dung trước, sau đó mới polish transition để giữ tiến độ và tránh bị sa đà vào hiệu ứng.

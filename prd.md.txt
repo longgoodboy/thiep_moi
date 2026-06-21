@@ -1,0 +1,753 @@
+# PRD — Graduation Invitation Microsite
+
+**Dự án:** Website mời tham dự lễ tốt nghiệp
+**Tên nhân vật chính:** Kiều Đức Long
+**Phiên bản:** v1.0
+**Ngày:** 21/06/2026
+**Phong cách:** Fashion cinematic, dark luxury, graduation editorial
+
+---
+
+## 1. Tổng quan sản phẩm
+
+Dự án là một website mời tham dự lễ tốt nghiệp dạng **microsite một trang**, tối ưu cho mobile, có giao diện sang trọng, thời trang và hoành tráng dựa trên bộ hình thiệp tốt nghiệp đã cung cấp.
+
+Website không chỉ hiển thị thông tin ngày lễ mà còn tạo cảm giác như người dùng đang **mở một tấm thiệp mời điện ảnh**. Người xem có thể tương tác để xem thời gian, địa điểm, khung chương trình, dress code, bản đồ và xác nhận tham dự.
+
+---
+
+## 2. Mục tiêu sản phẩm
+
+### 2.1 Mục tiêu chính
+
+* Tạo một website mời tốt nghiệp đẹp, sang, dễ dùng.
+* Truyền tải đúng tinh thần hình ảnh: **dark navy, champagne gold, cinematic, editorial, fashion**.
+* Cho phép khách mời nhanh chóng xem các thông tin quan trọng.
+* Tạo trải nghiệm tương tác mượt, tinh tế, không rối.
+* Hoạt động tốt trên điện thoại, vì phần lớn khách mời sẽ mở link từ Zalo, Messenger, Facebook hoặc Instagram.
+
+### 2.2 Mục tiêu phụ
+
+* Tăng cảm giác trang trọng cho buổi lễ.
+* Giúp khách dễ lưu lịch, mở bản đồ, xác nhận tham dự.
+* Tạo một trải nghiệm có thể chia sẻ như một “digital invitation”.
+
+---
+
+## 3. Đối tượng người dùng
+
+### 3.1 Khách mời chính
+
+Bạn bè, người thân, thầy cô, đồng nghiệp hoặc người quen được mời tham dự lễ tốt nghiệp.
+
+### 3.2 Nhu cầu của khách mời
+
+* Biết lễ diễn ra khi nào.
+* Biết địa điểm ở đâu.
+* Biết chương trình gồm những gì.
+* Biết nên mặc gì.
+* Có thể xác nhận tham dự nhanh.
+* Có thể mở Google Maps hoặc lưu lịch.
+
+---
+
+## 4. Concept trải nghiệm
+
+Website có cảm giác như một **poster thiệp mời điện ảnh**.
+
+Khi người dùng mở link, họ thấy một màn hình hero full-screen với ảnh chân dung, typography lớn và nút **“Mở thiệp mời”**. Sau khi bấm, nội dung được reveal bằng transition mượt: ảnh zoom nhẹ, chữ fade-up, các card thông tin xuất hiện lần lượt.
+
+Thông điệp chính:
+
+> LÊ TỐT NGHIỆP
+> Kiều Đức Long
+> “Hành trình mới bắt đầu từ hôm nay.”
+
+Tone tổng thể: sang, tối, mềm, tinh tế, có ánh vàng champagne.
+
+---
+
+## 5. Tài sản hình ảnh
+
+### 5.1 Ảnh chính đề xuất
+
+* `thiệp tốt nghiệp3.png`
+  Dùng làm hero chính vì bố cục sạch, dễ đọc chữ, đúng tinh thần tốt nghiệp.
+
+### 5.2 Ảnh phụ
+
+* `thiệp tốt nghiệp(1).png`
+  Dùng cho bản desktop hero hoặc section editorial vì ảnh có vibe fashion mạnh.
+
+### 5.3 Ảnh nền/phụ trợ
+
+* `thiệp tốt nghiệp2(1).png`
+  Dùng làm background phụ hoặc section mở đầu/closing vì ảnh hoành tráng, nhiều chi tiết sương khói và mặt nạ.
+
+---
+
+## 6. Phạm vi sản phẩm
+
+### 6.1 MVP
+
+Website v1 cần có:
+
+1. Hero mở đầu.
+2. Nút “Mở thiệp mời”.
+3. Thông tin lễ tốt nghiệp.
+4. Khung chương trình dạng timeline.
+5. Địa điểm + nút mở Google Maps.
+6. Dress code.
+7. RSVP đơn giản.
+8. Nút chia sẻ link.
+9. Thiết kế responsive cho mobile và desktop.
+10. Transition mượt cho mọi tương tác chính.
+
+### 6.2 Không thuộc MVP
+
+Các tính năng sau chưa cần trong bản đầu:
+
+* Đăng nhập tài khoản.
+* Quản trị viên phức tạp.
+* Chat realtime.
+* Gallery ảnh sau sự kiện.
+* Livestream.
+* Thanh toán hoặc vé tham dự.
+
+---
+
+## 7. Cấu trúc trang
+
+### 7.1 Section 1 — Hero / Opening
+
+Mục tiêu: gây ấn tượng ngay khi mở trang.
+
+Nội dung:
+
+* Dòng nhỏ: `GRADUATION EDITION`
+* Tiêu đề lớn: `LÊ TỐT NGHIỆP`
+* Tên: `Kiều Đức Long`
+* Quote: `Hành trình mới bắt đầu từ hôm nay`
+* CTA chính: `Mở thiệp mời`
+* CTA phụ: `Xem thông tin`
+
+Yêu cầu UX:
+
+* Full-screen trên mobile.
+* Ảnh nền tối, có overlay để chữ dễ đọc.
+* Nút CTA rõ ràng, dễ bấm.
+* Không để quá nhiều chữ trong màn đầu tiên.
+
+---
+
+### 7.2 Section 2 — Lời mời
+
+Nội dung mẫu:
+
+> Trân trọng kính mời bạn đến tham dự lễ tốt nghiệp của Kiều Đức Long.
+> Sự hiện diện của bạn là niềm vinh hạnh trong cột mốc đặc biệt này.
+
+CTA phụ:
+
+* `Xem khung chương trình`
+* `Xác nhận tham dự`
+
+---
+
+### 7.3 Section 3 — Thông tin nhanh
+
+Hiển thị dạng card:
+
+#### Card 1 — Thời gian
+
+* Ngày: `[Ngày]`
+* Giờ: `[Giờ]`
+* Nút: `Thêm vào lịch`
+
+#### Card 2 — Địa điểm
+
+* Tên địa điểm: `[Tên địa điểm]`
+* Địa chỉ: `[Địa chỉ]`
+* Nút: `Mở Google Maps`
+
+#### Card 3 — Dress code
+
+* Gợi ý: `Navy / Đen / Trắng / Champagne Gold`
+* Mô tả: `Trang trọng, tối giản, thanh lịch`
+
+---
+
+### 7.4 Section 4 — Khung chương trình
+
+Dạng timeline tương tác.
+
+Nội dung mẫu:
+
+| Thời gian | Hoạt động            |
+| --------- | -------------------- |
+| 18:00     | Đón khách            |
+| 18:30     | Khai mạc             |
+| 19:00     | Nghi thức tốt nghiệp |
+| 19:45     | Chụp ảnh lưu niệm    |
+| 20:30     | Tiệc nhẹ / giao lưu  |
+
+Yêu cầu tương tác:
+
+* Người dùng bấm vào “Khung chương trình” để mở timeline.
+* Timeline xuất hiện theo từng mốc, stagger animation.
+* Trên mobile, timeline phải dễ đọc, không quá nhỏ.
+
+---
+
+### 7.5 Section 5 — Địa điểm
+
+Hiển thị:
+
+* Tên địa điểm.
+* Địa chỉ đầy đủ.
+* Ghi chú gửi xe nếu có.
+* Nút `Mở Google Maps`.
+* Nút `Sao chép địa chỉ`.
+
+Trên mobile, khi bấm “Xem địa điểm”, có thể mở bottom sheet trượt từ dưới lên.
+
+---
+
+### 7.6 Section 6 — RSVP
+
+Form đơn giản:
+
+* Tên khách mời.
+* Số người tham dự.
+* Trạng thái:
+
+  * `Tôi sẽ tham dự`
+  * `Có thể tham dự`
+  * `Rất tiếc, tôi không thể tham dự`
+* Lời nhắn tùy chọn.
+
+Sau khi gửi thành công, hiện thông báo:
+
+> Cảm ơn bạn.
+> Rất hân hạnh được đón tiếp bạn trong ngày đặc biệt này.
+
+Yêu cầu UX:
+
+* Form ngắn, không gây áp lực.
+* Nút gửi rõ ràng.
+* Có trạng thái loading.
+* Có trạng thái thành công.
+* Có trạng thái lỗi nếu gửi thất bại.
+
+---
+
+### 7.7 Section 7 — Closing
+
+Nội dung:
+
+> The future is yours.
+> Make it count.
+
+Hoặc:
+
+> Rất hân hạnh được đón tiếp bạn.
+> Hành trình mới bắt đầu từ hôm nay.
+
+Có thể dùng ảnh nền sương khói hoặc ảnh số 1 làm background mờ.
+
+---
+
+## 8. Yêu cầu UI
+
+### 8.1 Phong cách thị giác
+
+Website cần có cảm giác:
+
+* Sang trọng.
+* Tối giản.
+* Thời trang.
+* Điện ảnh.
+* Hoành tráng nhưng không rối.
+* Dễ dùng, dễ đọc.
+
+### 8.2 Bảng màu
+
+| Mục đích       | Màu       |
+| -------------- | --------- |
+| Nền chính      | `#050D1A` |
+| Nền phụ        | `#0F1623` |
+| Xanh khói      | `#161E2F` |
+| Champagne gold | `#C8A874` |
+| Trắng ngà      | `#F4EEE8` |
+| Beige da       | `#CAB0AD` |
+| Xám phụ        | `#70787F` |
+
+### 8.3 Typography
+
+Đề xuất:
+
+* Heading: serif sang trọng, kiểu editorial.
+* Body: sans-serif dễ đọc.
+* Tên “Kiều Đức Long”: script/calligraphy.
+
+Ví dụ font direction:
+
+* Heading: Playfair Display, Cormorant Garamond, hoặc Cinzel.
+* Body: Inter, Manrope, hoặc Montserrat.
+* Signature: Great Vibes, Allura, hoặc font chữ ký custom.
+
+### 8.4 Component style
+
+Card:
+
+* Nền glassmorphism tối.
+* Viền champagne gold mảnh.
+* Border radius vừa phải.
+* Blur nhẹ.
+* Shadow mềm.
+* Icon line style.
+
+Button:
+
+* Primary: nền champagne gold, chữ navy đậm.
+* Secondary: transparent, viền champagne gold.
+* Hover: sáng nhẹ, không đổi màu quá gắt.
+
+---
+
+## 9. Yêu cầu Motion / Transition
+
+Motion là yếu tố quan trọng của dự án. Transition phải mượt, mềm, sang và có chủ đích.
+
+### 9.1 Motion principles
+
+* Không dùng animation quá nhanh, giật hoặc lòe loẹt.
+* Không dùng hiệu ứng 3D nặng.
+* Không dùng bounce quá trẻ con.
+* Ưu tiên fade, slide, scale nhẹ, blur nhẹ.
+* Mỗi tương tác phải có feedback rõ ràng.
+* Motion phải giúp người dùng hiểu trạng thái giao diện.
+
+### 9.2 Thời lượng animation
+
+| Tương tác             | Thời lượng |
+| --------------------- | ---------- |
+| Hero opening          | 800–1100ms |
+| Section reveal        | 500–700ms  |
+| Card hover/tap        | 160–240ms  |
+| Accordion timeline    | 350–500ms  |
+| Bottom sheet địa điểm | 450–650ms  |
+| RSVP success          | 700–900ms  |
+
+### 9.3 Easing
+
+Sử dụng easing mềm:
+
+```css
+--ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+--ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+```
+
+### 9.4 Animation cụ thể
+
+#### Khi bấm “Mở thiệp mời”
+
+* Ảnh nền zoom nhẹ.
+* Overlay khói/sương fade-in.
+* Tiêu đề trượt lên nhẹ.
+* Tên chữ ký hiện sau tiêu đề.
+* Các card thông tin xuất hiện lần lượt.
+
+#### Khi hover card
+
+* Card nâng lên 4–6px.
+* Viền vàng sáng nhẹ.
+* Icon dịch nhẹ sang phải.
+* Shadow tăng nhẹ.
+
+#### Khi mở timeline
+
+* Đường timeline draw từ trên xuống.
+* Từng mốc giờ fade-up theo thứ tự.
+* Delay giữa các item: 80–120ms.
+
+#### Khi gửi RSVP thành công
+
+* Nút chuyển sang trạng thái loading.
+* Sau đó hiện message cảm ơn.
+* Có ánh sáng vàng chạy ngang hoặc sparkle rất nhẹ.
+
+### 9.5 Reduced motion
+
+Website cần hỗ trợ chế độ giảm chuyển động.
+
+Nếu người dùng bật reduced motion:
+
+* Tắt animation dài.
+* Giữ feedback cơ bản.
+* Không dùng parallax.
+* Không zoom nền mạnh.
+
+---
+
+## 10. Yêu cầu Responsive
+
+### 10.1 Mobile
+
+Ưu tiên mobile-first.
+
+Yêu cầu:
+
+* Hero full-screen.
+* CTA nằm trong vùng dễ bấm.
+* Card xếp một cột.
+* Timeline dễ đọc.
+* Bottom sheet cho địa điểm hoặc chi tiết.
+* Font không quá nhỏ.
+* Không có horizontal scroll.
+
+### 10.2 Desktop
+
+Yêu cầu:
+
+* Bố cục rộng hơn.
+* Hero có thể chia 2 cột:
+
+  * Trái: nội dung, CTA.
+  * Phải: ảnh chân dung.
+* Các card thông tin có thể xếp 3 cột.
+* Timeline nằm giữa hoặc lệch trái theo phong cách editorial.
+
+---
+
+## 11. Yêu cầu chức năng
+
+### 11.1 Mở thiệp
+
+Người dùng bấm `Mở thiệp mời` để reveal nội dung.
+
+Acceptance criteria:
+
+* Bấm nút thì nội dung chính xuất hiện mượt.
+* Không reload trang.
+* Có thể scroll xuống các section sau khi mở.
+* Trên mobile không bị giật layout.
+
+---
+
+### 11.2 Xem khung chương trình
+
+Người dùng bấm vào card hoặc nút `Khung chương trình`.
+
+Acceptance criteria:
+
+* Timeline mở/đóng được.
+* Animation mượt.
+* Nội dung không bị tràn màn hình.
+* Có trạng thái đang mở.
+
+---
+
+### 11.3 Xem địa điểm
+
+Người dùng bấm `Mở Google Maps`.
+
+Acceptance criteria:
+
+* Mở đúng link Google Maps.
+* Có nút sao chép địa chỉ.
+* Khi copy thành công, hiện feedback `Đã sao chép`.
+
+---
+
+### 11.4 Thêm vào lịch
+
+Người dùng bấm `Thêm vào lịch`.
+
+Acceptance criteria:
+
+* Tạo link Google Calendar hoặc file `.ics`.
+* Nội dung lịch gồm tên sự kiện, ngày giờ, địa điểm, mô tả.
+* Mở được trên mobile.
+
+---
+
+### 11.5 RSVP
+
+Người dùng nhập thông tin và gửi xác nhận.
+
+Acceptance criteria:
+
+* Form validate tên khách mời.
+* Cho phép chọn trạng thái tham dự.
+* Có trạng thái loading.
+* Gửi thành công thì hiện thank-you state.
+* Nếu lỗi thì hiện thông báo dễ hiểu.
+* Không mất dữ liệu đã nhập khi có lỗi.
+
+---
+
+### 11.6 Chia sẻ
+
+Người dùng bấm `Chia sẻ`.
+
+Acceptance criteria:
+
+* Trên mobile dùng native share nếu trình duyệt hỗ trợ.
+* Nếu không hỗ trợ thì copy link.
+* Có feedback `Đã sao chép link`.
+
+---
+
+## 12. Nội dung mặc định
+
+### 12.1 Hero
+
+```text
+GRADUATION EDITION
+
+LÊ TỐT NGHIỆP
+Kiều Đức Long
+
+“Hành trình mới bắt đầu từ hôm nay”
+
+[Mở thiệp mời]
+```
+
+### 12.2 Lời mời
+
+```text
+Trân trọng kính mời bạn đến tham dự lễ tốt nghiệp của Kiều Đức Long.
+
+Sự hiện diện của bạn là niềm vinh hạnh trong cột mốc đặc biệt này.
+```
+
+### 12.3 Footer
+
+```text
+The future is yours.
+Make it count.
+```
+
+---
+
+## 13. Yêu cầu kỹ thuật
+
+### 13.1 Công nghệ đề xuất
+
+Phương án đơn giản:
+
+* HTML
+* CSS
+* JavaScript thuần
+* Deploy bằng Netlify, Vercel hoặc GitHub Pages
+
+Phương án chuyên nghiệp hơn:
+
+* Next.js
+* Tailwind CSS
+* Framer Motion
+* Formspree/Tally/Supabase cho RSVP
+
+### 13.2 Ảnh
+
+Yêu cầu:
+
+* Chuyển ảnh sang WebP hoặc AVIF.
+* Có bản mobile và desktop nếu cần.
+* Lazy-load ảnh không nằm ở hero.
+* Hero image cần preload.
+* Có overlay để đảm bảo chữ dễ đọc.
+
+### 13.3 Performance
+
+Mục tiêu:
+
+* Trang mở nhanh trên mobile.
+* Không dùng video nặng trong MVP.
+* Không dùng animation gây giật.
+* Ưu tiên animation bằng `transform` và `opacity`.
+* Hạn chế thư viện không cần thiết.
+
+### 13.4 Accessibility
+
+Yêu cầu:
+
+* Chữ đủ tương phản trên nền tối.
+* Nút có kích thước dễ bấm trên mobile.
+* Có trạng thái focus cho keyboard.
+* Form có label rõ ràng.
+* Animation tôn trọng `prefers-reduced-motion`.
+* Không truyền tải thông tin chỉ bằng màu sắc.
+
+---
+
+## 14. Analytics cần theo dõi
+
+Các event nên tracking:
+
+* `open_invitation_clicked`
+* `program_viewed`
+* `location_opened`
+* `calendar_added`
+* `rsvp_started`
+* `rsvp_submitted`
+* `share_clicked`
+
+Mục đích:
+
+* Biết bao nhiêu người mở thiệp.
+* Biết bao nhiêu người xem địa điểm.
+* Biết bao nhiêu người xác nhận tham dự.
+
+---
+
+## 15. Admin / Quản lý dữ liệu
+
+MVP không cần dashboard phức tạp.
+
+Phương án đơn giản:
+
+* RSVP gửi về Google Sheet qua Google Form/Tally/Formspree.
+* Người tổ chức xem danh sách khách trong sheet.
+
+Dữ liệu RSVP gồm:
+
+| Trường             | Bắt buộc |
+| ------------------ | -------- |
+| Tên khách mời      | Có       |
+| Trạng thái tham dự | Có       |
+| Số người đi cùng   | Không    |
+| Lời nhắn           | Không    |
+| Thời gian gửi      | Tự động  |
+
+---
+
+## 16. Rủi ro và hướng xử lý
+
+### Rủi ro 1: Trang quá nặng do ảnh lớn
+
+Cách xử lý:
+
+* Nén ảnh.
+* Dùng WebP/AVIF.
+* Lazy-load ảnh phụ.
+* Chỉ preload ảnh hero.
+
+### Rủi ro 2: Animation quá nhiều gây rối
+
+Cách xử lý:
+
+* Giới hạn animation ở các điểm chính.
+* Không dùng hiệu ứng liên tục.
+* Không dùng quá nhiều sparkle, particle, parallax.
+
+### Rủi ro 3: Chữ khó đọc trên nền ảnh
+
+Cách xử lý:
+
+* Thêm overlay tối.
+* Dùng gradient từ trái sang phải.
+* Dùng text shadow nhẹ.
+* Đặt text ở vùng ít chi tiết.
+
+### Rủi ro 4: Form RSVP gửi lỗi
+
+Cách xử lý:
+
+* Có fallback copy thông tin liên hệ.
+* Hiện thông báo lỗi rõ ràng.
+* Không xóa dữ liệu người dùng đã nhập.
+
+---
+
+## 17. Acceptance Criteria tổng thể
+
+Website được coi là đạt MVP khi:
+
+* Giao diện đúng tinh thần dark luxury graduation.
+* Mở tốt trên mobile và desktop.
+* Người dùng xem được ngày giờ, địa điểm, chương trình, dress code.
+* Người dùng bấm được Google Maps.
+* Người dùng có thể xác nhận tham dự.
+* Transition mượt, không giật.
+* Nội dung dễ đọc.
+* Ảnh không làm trang tải quá chậm.
+* Có trải nghiệm cảm xúc như đang mở một thiệp mời điện ảnh.
+
+---
+
+## 18. Timeline triển khai đề xuất
+
+### Giai đoạn 1 — Chuẩn bị nội dung
+
+Thời gian: 0.5 ngày
+
+* Chốt ngày giờ.
+* Chốt địa điểm.
+* Chốt khung chương trình.
+* Chốt nội dung RSVP.
+* Chọn ảnh chính.
+
+### Giai đoạn 2 — UI Design
+
+Thời gian: 1–2 ngày
+
+* Thiết kế mobile first.
+* Thiết kế desktop.
+* Chốt typography, màu, card, button.
+* Prototype motion cơ bản.
+
+### Giai đoạn 3 — Development
+
+Thời gian: 2–4 ngày
+
+* Dựng layout.
+* Tối ưu ảnh.
+* Code animation.
+* Tích hợp RSVP.
+* Tích hợp Google Maps.
+* Tích hợp add-to-calendar.
+
+### Giai đoạn 4 — QA
+
+Thời gian: 0.5–1 ngày
+
+* Test mobile.
+* Test desktop.
+* Test form.
+* Test tốc độ tải.
+* Test chia sẻ link.
+* Test lỗi mạng.
+
+### Giai đoạn 5 — Deploy
+
+Thời gian: 0.5 ngày
+
+* Deploy lên Vercel/Netlify.
+* Gắn domain nếu có.
+* Kiểm tra preview khi share lên Zalo/Facebook.
+* Chốt link gửi khách mời.
+
+---
+
+## 19. Gợi ý tên route / domain
+
+Ví dụ:
+
+* `kieuduclong-graduation.com`
+* `longgraduation.com`
+* `le-tot-nghiep-kieu-duc-long.vercel.app`
+* `kdl-graduation.vercel.app`
+
+---
+
+## 20. Kết luận
+
+Website cần được triển khai như một **digital graduation invitation** cao cấp, không phải một landing page thông thường. Trọng tâm là cảm xúc, hình ảnh, typography và motion.
+
+Tinh thần cuối cùng:
+
+> Đơn giản để dùng.
+> Sang trọng để nhớ.
+> Mượt mà để cảm thấy đặc biệt.

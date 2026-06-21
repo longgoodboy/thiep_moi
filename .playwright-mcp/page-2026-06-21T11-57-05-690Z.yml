@@ -1,0 +1,128 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - img "Graduation invitation artwork for Kieu Duc Long" [ref=e4]
+      - generic [ref=e6]:
+        - paragraph [ref=e7]: GRADUATION EDITION
+        - heading "L? t?t nghi?p" [level=1] [ref=e8]
+        - paragraph [ref=e9]: Ki?u ??c Long
+        - paragraph [ref=e10]: H?nh tr?nh m?i b?t ??u t? h?m nay.
+        - generic [ref=e11]:
+          - button "M? thi?p m?i" [ref=e12] [cursor=pointer]
+          - button "Xem th?ng tin" [ref=e13] [cursor=pointer]
+      - button "Cu?n xu?ng ?? xem n?i dung" [ref=e14]:
+        - generic [ref=e16]: Kh?m ph? thi?p
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Invitation
+          - heading "You are warmly invited to Kieu Duc Long's graduation ceremony." [level=2]
+          - paragraph: Your presence would mean a lot on this special day.
+          - generic:
+            - button "View program"
+            - button "RSVP"
+        - complementary:
+          - img "Portrait image"
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Quick details
+          - heading "The essentials at a glance." [level=2]
+        - generic:
+          - article:
+            - paragraph: Time
+            - heading "21/06/2026 ? 18:00" [level=3]
+            - paragraph: Guest arrival and opening.
+            - button "Add to calendar"
+          - article:
+            - paragraph: Venue
+            - heading "Grand Hall, District 1" [level=3]
+            - paragraph: 123 Nguyen Hue, Ben Nghe Ward, Ho Chi Minh City.
+            - button "Open Google Maps"
+          - article:
+            - paragraph: Dress code
+            - heading "Navy ? Black ? White ? Champagne Gold" [level=3]
+            - paragraph: Formal, minimal, elegant.
+            - button "Copy address"
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Program
+          - heading "The evening unfolds in carefully paced moments." [level=2]
+          - button "Collapse / expand"
+        - generic:
+          - list:
+            - listitem:
+              - generic: 18:00
+              - strong: Guest arrival
+            - listitem:
+              - generic: 18:30
+              - strong: Opening remarks
+            - listitem:
+              - generic: 19:00
+              - strong: Graduation ceremony
+            - listitem:
+              - generic: 19:45
+              - strong: Photo session
+            - listitem:
+              - generic: 20:30
+              - strong: Light reception ? mingle
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Venue
+          - heading "Grand Hall" [level=2]
+          - paragraph: 123 Nguy?n Hu?, PhClose B?n Ngh?, Qu?n 1, TP. H? Ch? Minh.
+          - paragraph: Parking is available in the basement.
+          - generic:
+            - button "Open map"
+            - button "Copy address"
+        - iframe [ref=e17]:
+          - link "Open in Maps (opens in new tab)" [ref=f4e4] [cursor=pointer]:
+            - /url: about:invalid#zClosurez
+            - text: Open in Maps
+            - img [ref=f4e6]
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - paragraph: RSVP
+            - heading "RSVP trong v?i gi?y." [level=2]
+          - generic:
+            - generic:
+              - generic: Guest name
+              - textbox "Guest name":
+                - /placeholder: Enter your name
+            - generic:
+              - generic: Number of guests
+              - spinbutton "Number of guests": "1"
+            - generic:
+              - generic: Status
+              - combobox "Status":
+                - option "I will attend" [selected]
+                - option "Maybe attending"
+                - option "Sorry, I cannot attend"
+            - generic:
+              - generic: Message
+              - textbox "Message":
+                - /placeholder: Add a short note...
+            - button "Send RSVP"
+            - paragraph: We will follow up after receiving your RSVP.
+        - complementary:
+          - img "Cinematic background"
+          - generic:
+            - paragraph: The future is yours.
+            - paragraph: Make it count.
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Closing
+        - heading "We look forward to welcoming you." [level=2] [ref=e22]
+      - button "Share invitation" [ref=e23] [cursor=pointer]
+  - generic:
+    - generic:
+      - heading [level=3]: Venue
+      - paragraph: Grand Hall ? 123 Nguy?n Hu?, PhClose B?n Ngh?, Qu?n 1, TP. H? Ch? Minh.
+      - generic:
+        - button: Open map
+        - button: Copy address
+        - button: Close

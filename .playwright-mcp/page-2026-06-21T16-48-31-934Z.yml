@@ -1,0 +1,86 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - button "Mở thiệp mời" [ref=e5] [cursor=pointer]
+      - generic [ref=e9]:
+        - generic [ref=e10]: Graduation edition
+        - strong [ref=e11]: Kiều Đức Long
+      - button "Nhạc nền" [ref=e12] [cursor=pointer]:
+        - text: ♪
+        - generic [ref=e13]: Nhạc nền
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - paragraph [ref=e17]: GRADUATION EDITION
+          - heading "Lễ tốt nghiệp" [level=1] [ref=e18]:
+            - generic [ref=e19]: Lễ tốt
+            - generic [ref=e20]: nghiệp
+          - paragraph [ref=e21]: Kiều Đức Long
+          - paragraph [ref=e22]: "\"Hành trình mới bắt đầu từ hôm nay\""
+          - generic [ref=e23]:
+            - generic [ref=e24]:
+              - generic [ref=e25]: Thời gian
+              - strong [ref=e26]: 18:00 · 21.06.2026
+            - generic [ref=e27]:
+              - generic [ref=e28]: Địa điểm
+              - strong [ref=e29]: Grand Hall, Quận 1
+            - generic [ref=e30]:
+              - generic [ref=e31]: Dress code
+              - strong [ref=e32]: Navy · Đen · Trắng
+          - button "Mở thiệp mời" [ref=e33] [cursor=pointer]:
+            - generic [ref=e34]: ✦
+            - text: Mở thiệp mời
+            - generic [ref=e35]: →
+        - article:
+          - generic:
+            - paragraph: Thông tin nhanh
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - generic:
+                  - paragraph: Thời gian
+                  - heading "21.06.2026" [level=3]
+                  - paragraph: 18:00
+                  - button "Xem chương trình"
+              - generic:
+                - generic:
+                  - img
+                - generic:
+                  - paragraph: Địa điểm
+                  - heading "Grand Hall, Quận 1" [level=3]
+                  - paragraph: 123 Nguyễn Huệ, TP. Hồ Chí Minh
+                  - button "Mở bản đồ"
+              - generic:
+                - generic:
+                  - img
+                - generic:
+                  - paragraph: Dress code
+                  - heading "Navy · Đen · Trắng" [level=3]
+                  - paragraph: Champagne Gold
+                  - button "Xem gợi ý"
+      - complementary "Ảnh minh họa thiệp mời" [ref=e36]:
+        - generic [ref=e37]:
+          - img "Kiều Đức Long" [ref=e38]
+          - img "Khung cảnh điện ảnh" [ref=e39]
+    - navigation "Điều hướng thiệp mời":
+      - button "Thông tin":
+        - generic:
+          - img
+        - generic: Thông tin
+      - button "Chương trình":
+        - generic:
+          - img
+        - generic: Chương trình
+      - button "Địa điểm":
+        - generic:
+          - img
+        - generic: Địa điểm
+      - button "Dress code":
+        - generic:
+          - img
+        - generic: Dress code
+      - button "Thông báo":
+        - generic:
+          - img
+        - generic: Thông báo

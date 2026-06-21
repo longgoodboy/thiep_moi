@@ -1,0 +1,58 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - button "Mở menu" [ref=e7] [cursor=pointer]
+      - generic [ref=e11]:
+        - generic [ref=e12]: Graduation Edition
+        - strong [ref=e13]: Kiều Đức Long
+      - button "Bật hoặc tắt nhạc nền" [ref=e14] [cursor=pointer]:
+        - text: ♪
+        - generic [ref=e15]: Nhạc nền
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - paragraph [ref=e19]: Graduation Invitation
+          - heading "Lễ tốt nghiệp" [level=1] [ref=e20]
+          - paragraph [ref=e21]: Kiều Đức Long
+          - paragraph [ref=e22]: “Hành trình mới bắt đầu từ hôm nay”
+          - button "✦ Mở thiệp mời →" [ref=e23] [cursor=pointer]
+        - generic [ref=e24]:
+          - navigation "Điều hướng thiệp mời" [ref=e25]:
+            - button "i Thông tin" [ref=e26] [cursor=pointer]:
+              - generic [ref=e27]: i
+              - generic [ref=e28]: Thông tin
+            - button "⌘ Chương trình" [ref=e29] [cursor=pointer]:
+              - generic [ref=e30]: ⌘
+              - generic [ref=e31]: Chương trình
+            - button "⌖ Địa điểm" [ref=e32] [cursor=pointer]:
+              - generic [ref=e33]: ⌖
+              - generic [ref=e34]: Địa điểm
+            - button "◇ Dress code" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: ◇
+              - generic [ref=e37]: Dress code
+            - button "✓ Xác nhận" [ref=e38] [cursor=pointer]:
+              - generic [ref=e39]: ✓
+              - generic [ref=e40]: Xác nhận
+          - article [ref=e42]:
+            - paragraph [ref=e43]: Thông tin nhanh
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - generic [ref=e46]: ◷
+                - generic [ref=e47]:
+                  - paragraph [ref=e48]: Thời gian
+                  - heading "28.06.2025" [level=3] [ref=e49]
+                  - paragraph [ref=e50]: 18:00 · Thứ Bảy
+              - generic [ref=e51]:
+                - generic [ref=e52]: ⌖
+                - generic [ref=e53]:
+                  - paragraph [ref=e54]: Địa điểm
+                  - heading "Grand Hall" [level=3] [ref=e55]
+                  - paragraph [ref=e56]: Trung tâm Hội nghị Quốc gia Hà Nội
+              - generic [ref=e57]:
+                - generic [ref=e58]: ◇
+                - generic [ref=e59]:
+                  - paragraph [ref=e60]: Dress code
+                  - heading "Navy – Đen" [level=3] [ref=e61]
+                  - paragraph [ref=e62]: Thanh lịch, trang trọng
+      - complementary "Ảnh minh họa thiệp mời" [ref=e63]:
+        - img "Thiệp mời lễ tốt nghiệp Kiều Đức Long" [ref=e64]

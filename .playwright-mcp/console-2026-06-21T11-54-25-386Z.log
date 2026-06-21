@@ -1,0 +1,5 @@
+[     357ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:4173/images/thi?p%20t?t%20nghi?p3.png:0
+[     362ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:4173/images/thi?p%20t?t%20nghi?p.png:0
+[     373ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:4173/images/thi?p%20t?t%20nghi?p2.png:0
+[     567ms] Invalid or unexpected token
+[    1581ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:4173/favicon.ico:0

@@ -1,0 +1,125 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - img "?nh thi?p t?t nghi?p Ki?u ??c Long" [ref=e4]
+      - generic [ref=e6]:
+        - paragraph [ref=e7]: GRADUATION EDITION
+        - heading "L? t?t nghi?p" [level=1] [ref=e8]
+        - paragraph [ref=e9]: Ki?u ??c Long
+        - paragraph [ref=e10]: H?nh tr?nh m?i b?t ??u t? h?m nay.
+        - generic [ref=e11]:
+          - button "M? thi?p m?i" [ref=e12] [cursor=pointer]
+          - button "Xem th?ng tin" [ref=e13] [cursor=pointer]
+      - button "Cu?n xu?ng ?? xem n?i dung" [ref=e14]:
+        - generic [ref=e16]: Kh?m ph? thi?p
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: L?i m?i
+          - heading "Tr?n tr?ng k?nh m?i b?n ??n tham d? l? t?t nghi?p c?a Ki?u ??c Long." [level=2]
+          - paragraph: S? hi?n di?n c?a b?n l? ni?m vinh h?nh trong c?t m?c ??c bi?t n?y.
+          - generic:
+            - button "Xem khung ch??ng tr?nh"
+            - button "X?c nh?n tham d?"
+        - complementary:
+          - img "?nh ch?n dung d? ti?c"
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Th?ng tin nhanh
+          - heading "Nh?ng ?i?u c?n bi?t trong m?t l?n l??t." [level=2]
+        - generic:
+          - article:
+            - paragraph: Th?i gian
+            - heading "21/06/2026 ? 18:00" [level=3]
+            - paragraph: "??n kh?ch v? khai ti?c."
+            - button "Th?m v?o l?ch"
+          - article:
+            - paragraph: "??a ?i?m"
+            - heading "Grand Hall, Qu?n 1" [level=3]
+            - paragraph: 123 Nguy?n Hu?, Ph??ng B?n Ngh?, TP. H? Ch? Minh.
+            - button "M? Google Maps"
+          - article:
+            - paragraph: Dress code
+            - heading "Navy ? ?en ? Tr?ng ? Champagne Gold" [level=3]
+            - paragraph: Trang tr?ng, t?i gi?n, thanh l?ch.
+            - button "Sao ch?p ??a ch?"
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: Khung ch??ng tr?nh
+          - heading "Nh?p bu?i t?i ???c s?p theo t?ng kho?nh kh?c." [level=2]
+          - button "Thu g?n / m? r?ng"
+        - generic:
+          - list:
+            - listitem:
+              - generic: 18:00
+              - strong: "??n kh?ch"
+            - listitem:
+              - generic: 18:30
+              - strong: Khai m?c
+            - listitem:
+              - generic: 19:00
+              - strong: Nghi th?c t?t nghi?p
+            - listitem:
+              - generic: 19:45
+              - strong: Ch?p ?nh l?u ni?m
+            - listitem:
+              - generic: 20:30
+              - strong: Ti?c nh? ? giao l?u
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: "??a ?i?m"
+          - heading "Grand Hall" [level=2]
+          - paragraph: 123 Nguy?n Hu?, Ph??ng B?n Ngh?, Qu?n 1, TP. H? Ch? Minh.
+          - paragraph: C? khu v?c g?i xe ngay t?ng h?m.
+          - generic:
+            - button "M? b?n ??"
+            - button "Sao ch?p ??a ch?"
+        - iframe [ref=e17]:
+          
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - paragraph: RSVP
+            - heading "X?c nh?n tham d? trong v?i gi?y." [level=2]
+          - generic:
+            - generic:
+              - generic: T?n kh?ch m?i
+              - textbox "T?n kh?ch m?i":
+                - /placeholder: Nh?p t?n c?a b?n
+            - generic:
+              - generic: S? ng??i tham d?
+              - spinbutton "S? ng??i tham d?": "1"
+            - generic:
+              - generic: Tr?ng th?i
+              - combobox "Tr?ng th?i":
+                - option "T?i s? tham d?" [selected]
+                - option "C? th? tham d?"
+                - option "R?t ti?c, t?i kh?ng th? tham d?"
+            - generic:
+              - generic: L?i nh?n
+              - textbox "L?i nh?n":
+                - /placeholder: N?u b?n c? l?i nh?n th?m...
+            - button "G?i x?c nh?n"
+            - paragraph: Ch?ng t?i s? ph?n h?i ngay khi nh?n ???c x?c nh?n c?a b?n.
+        - complementary:
+          - img "?nh n?n cinematic"
+          - generic:
+            - paragraph: The future is yours.
+            - paragraph: Make it count.
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: K?t th?c
+        - heading "R?t h?n h?nh ???c ??n ti?p b?n." [level=2] [ref=e22]
+      - button "Chia s? thi?p" [ref=e23] [cursor=pointer]
+  - generic:
+    - generic:
+      - heading [level=3]: "??a ?i?m"
+      - paragraph: Grand Hall ? 123 Nguy?n Hu?, Ph??ng B?n Ngh?, Qu?n 1, TP. H? Ch? Minh.
+      - generic:
+        - button: M? b?n ??
+        - button: Sao ch?p ??a ch?
+        - button: "??ng"
