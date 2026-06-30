@@ -9,20 +9,22 @@ const musicBtn = document.querySelector('#musicBtn');
 let activePanel = 'info';
 let musicOn = false;
 
-const altPanels = ['program', 'dresscode'];
-let isAltTheme = false;
+const panelPhotoMap = {
+  info: '1',
+  program: '2',
+  location: '3',
+  dresscode: '4',
+  rsvp: '5'
+};
 
 function syncPanel(panelName) {
   const nextPanel = panels.length && document.querySelector(`[data-panel-content="${panelName}"]`) ? panelName : 'info';
   activePanel = nextPanel;
   app.dataset.activePanel = nextPanel;
 
-  const shouldBeAlt = altPanels.includes(nextPanel);
-  if (shouldBeAlt !== isAltTheme) {
-    isAltTheme = shouldBeAlt;
-    app.dataset.theme = isAltTheme ? 'alt' : 'main';
-    // Image transitions are now handled via CSS based on data-theme attribute
-  }
+  // Set which photo to show
+  const photoNum = panelPhotoMap[nextPanel] || '5';
+  app.dataset.photo = photoNum;
 
   tabButtons.forEach((button) => {
     const isActive = button.dataset.panel === nextPanel;
@@ -68,7 +70,7 @@ tabButtons.forEach((button) => {
 });
 
 copyAddressBtn?.addEventListener('click', async () => {
-  const address = '123 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh';
+  const address = 'Hội trường Nguyễn Văn Đạo, Đại học Quốc gia Hà Nội, 144 Xuân Thủy, Cầu Giấy, Hà Nội';
   try {
     await navigator.clipboard.writeText(address);
     copyAddressBtn.textContent = 'Đã sao chép';
